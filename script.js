@@ -16,15 +16,19 @@ const sites = [
 ];
 
 for (let sitesIndex = 0; sitesIndex < sites.length; sitesIndex++){
+    // create our anchor element , and assign the correct siteIndex address to its href
     const newAnchor = document.createElement('a');
     newAnchor.setAttribute('href', sites[sitesIndex].address);
     newAnchor.setAttribute('target', '_blank');
 
+    // create our image element, and assign the correct siteIndex logo to its src
     const newImage = document.createElement('img');
     newImage.setAttribute('src', sites[sitesIndex].logo);
     newImage.setAttribute('style', "width: 100px; height: auto; margin: 50px;");
 
+    // append our new image to our new anchor element
     newAnchor.appendChild(newImage);
 
+    // append the anchor element with the img element inside of it, to our body
     document.querySelector('body').appendChild(newAnchor);
 }
